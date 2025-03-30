@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eid Mubarak, Maheen!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap');
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+            text-align: center;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            color: #fff;
+        }
+
+        .eid-greeting {
+            font-family: 'Great Vibes', cursive;
+            font-size: 60px;
+            color: #ffffff;
+            text-shadow: 0 0 15px rgba(255, 105, 180, 1), 0 0 30px rgba(255, 182, 193, 0.8);
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px rgba(255, 105, 180, 1), 0 0 20px rgba(255, 182, 193, 0.8); }
+            to { text-shadow: 0 0 20px rgba(255, 105, 180, 1), 0 0 40px rgba(255, 182, 193, 1); }
+        }
+
+        .eid-message {
+            font-size: 22px;
+            margin-top: 10px;
+            font-weight: 600;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards 1s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .lanterns {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 150px;
+            display: flex;
+            justify-content: space-around;
+            pointer-events: none;
+        }
+
+        .lantern {
+            width: 50px;
+            height: 100px;
+            background: #ffcccb;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 182, 193, 0.7);
+            animation: sway 3s ease-in-out infinite;
+        }
+
+        @keyframes sway {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+
+        .moon {
+            position: absolute;
+            top: 10%;
+            right: 10%;
+            width: 80px;
+            height: 80px;
+            background: #ffcccb;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255, 182, 193, 1);
+            transition: transform 0.3s;
+        }
+
+        .moon:hover {
+            transform: scale(1.2);
+        }
+
+        .eid-gift {
+            margin-top: 30px;
+            padding: 15px 30px;
+            font-size: 20px;
+            background: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .eid-gift:hover {
+            background: #d63384;
+            transform: scale(1.1);
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .money-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            animation: fadeIn 1s;
+        }
+
+        .money {
+            font-size: 50px;
+            animation: fall 3s linear forwards;
+            position: absolute;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-50px) rotate(0); opacity: 1; }
+            100% { transform: translateY(300px) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="eid-greeting">🌙 Eid Mubarak, Maheen! 🎉</div>
+    <p class="eid-message">Wishing you endless happiness, love, and countless blessings this Eid! 💖</p>
+    <div class="lanterns">
+        <div class="lantern"></div>
+        <div class="lantern"></div>
+        <div class="lantern"></div>
+    </div>
+    <div class="moon"></div>
+    <button class="eid-gift" onclick="showEidi()">🎁 Tap to Receive Your Eidi</button>
+    <div class="money-container" id="money-container">
+        <div class="money" style="left: -40px;">💸</div>
+        <div class="money" style="left: 0px;">💰</div>
+        <div class="money" style="left: 40px;">💵</div>
+    </div>
+    <div class="footer">Stay blessed, Maheen! May your life shine as bright as the Eid moon! 🌙✨</div>
+    <script>
+        function showEidi() {
+            document.getElementById("money-container").style.display = "block";
+            setTimeout(() => {
+                alert("Here's your virtual Eidi 💸 , Maheen! You are an amazing friend! May your Eid be filled with love, joy, and blessings! 💕");
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
